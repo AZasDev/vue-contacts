@@ -15,8 +15,8 @@
                     <div class="office-company">{{ selectedLocation.company }}</div>
                     <ul class="office-address">
                         <li>{{ selectedLocation.formatted_address }}</li>
-                        <li>{{ selectedLocation.zip_code }}</li>
                         <li>{{ selectedLocation.country }}</li>
+                        <li>{{ selectedLocation.zip_code }}</li>
                     </ul>
                 </div>
             </div>

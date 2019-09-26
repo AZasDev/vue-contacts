@@ -22,7 +22,8 @@
                                        id="name"
                                        name="name"
                                        :class="{'is-error': errors.length > 0}"
-                                       type="text" inputmode="text">
+                                       type="text"
+                                       inputmode="text">
                                 <div class="form-field__line"></div>
                                 <div class="form-field__error">{{ errors[0] }}</div>
                             </ValidationProvider>
@@ -36,7 +37,8 @@
                                        id="phone"
                                        name="phone"
                                        :class="{'is-error': errors.length > 0}"
-                                       type="tel" inputmode="tel">
+                                       type="tel"
+                                       inputmode="tel">
                                 <div class="form-field__line"></div>
                                 <div class="form-field__error">{{ errors[0] }}</div>
                             </ValidationProvider>
@@ -51,7 +53,8 @@
                                        id="email"
                                        name="email"
                                        :class="{'is-error': errors.length > 0}"
-                                       type="email" inputmode="email">
+                                       type="email"
+                                       inputmode="email">
                                 <div class="form-field__line"></div>
                                 <div class="form-field__error">{{ errors[0] }}</div>
                             </ValidationProvider>
@@ -118,6 +121,8 @@
 					}
 				})
 				.catch(() => {
+					this.isSending = false;
+
 					Swal.fire({
 						type: 'error',
 						title: 'Sorry server error',
