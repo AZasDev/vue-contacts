@@ -1,0 +1,24 @@
+@mixin media($value, $direction: min, $dimension: width) {
+	$corrector: 1;
+
+	@if $direction == max {
+		$corrector: 0;
+	}
+
+	@if type-of($value) == number {
+		$dir: #{$direction}-width;
+
+		@if $dimension == height {
+			$dir: #{$direction}-height;
+		}
+
+		@media only screen and ($dir: $value + $corrector) {
+			@content;
+		}
+
+	} @else {
+		@media #{$value} {
+			@content;
+		}
+	}
+}

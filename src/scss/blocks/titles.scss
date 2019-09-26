@@ -1,0 +1,25 @@
+.title {
+	font-weight: 500;
+	margin: 0;
+
+	&--page {
+		font-size: em(65);
+		line-height: 1;
+		@include media($screen-def) {
+			font-size: em(72);
+		}
+	}
+
+	&--section {
+		font-size: em(40);
+		margin-bottom: rem(30);
+		@include media($screen-def) {
+			font-size: em(48);
+			margin-bottom: rem(52);
+		}
+	}
+
+	&--white {
+		color: $white;
+	}
+}

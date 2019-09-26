@@ -1,0 +1,41 @@
+.button {
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	border: none;
+	color: $white;
+	background: $theme-color-3;
+	position: relative;
+	font: 500 em(23) $font-family-main;
+	justify-content: center;
+	padding: rem(10);
+	user-select: none;
+	transition: background-color 0.2s ease;
+	outline: none;
+
+	&--large {
+		width: 100%;
+		min-height: rem(80);
+		@include media($screen-sm) {
+			max-width: rem(380);
+			min-height: rem(100);
+		}
+		@include media($screen-def) {
+			min-height: rem(124);
+			max-width: rem(417);
+		}
+	}
+
+	&:active {
+		top: 1px;
+	}
+
+	&:disabled {
+		pointer-events: none;
+		opacity: 0.85;
+	}
+
+	&:hover {
+		background-color: darken($theme-color-3, 10%);
+	}
+}

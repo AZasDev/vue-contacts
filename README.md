@@ -1,5 +1,8 @@
 # vue-contacts
 
+#### Project info
+https://mapstyle.withgoogle.com/ - map styles dark
+
 ## Project setup
 ```
 npm install

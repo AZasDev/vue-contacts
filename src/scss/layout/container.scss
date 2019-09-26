@@ -1,0 +1,8 @@
+.container {
+	$gap: rem(15);
+
+	padding-left: $gap;
+	padding-right: $gap;
+	max-width: calc(#{$container-default} + #{$gap} * 2);
+	margin: 0 auto;
+}

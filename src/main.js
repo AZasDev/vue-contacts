@@ -1,8 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import "./plugins/vee-validate";
+import "./plugins/google-map";
+import Contacts from './Contacts.vue';
 
-Vue.config.productionTip = false
+Vue.use(require('vue-scrollto'));
+
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+	render: h => h(Contacts)
+}).$mount('#app');

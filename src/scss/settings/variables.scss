@@ -1,0 +1,29 @@
+// Containers
+$container-default: 1735px !default;
+
+// Colors
+$white: white !default;
+$black: black !default;
+
+$theme-color-1: #5e9575 !default;
+$theme-color-2: #4ac47f !default;
+$theme-color-3: #5c5c5c !default;
+$theme-color-4: #ff0036 !default;
+
+$error: $theme-color-4 !default;
+
+// Fonts
+$font-family-main: Roboto, Arial, sans-serif !default;
+
+// Breakpoints screens
+$screen-xs: 375px !default;
+$screen-sm: 480px !default;
+$screen-ms: 640px !default;
+$screen-md: 768px !default;
+$screen-xmd: 960px !default;
+$screen-def: 1024px !default;
+$screen-lg: 1280px !default;
+$screen-xl: 1366px !default;
+$screen-mg: 1440px !default;
+$screen-xmg: 1600px !default;
+$screen-dt: 1920px !default;
