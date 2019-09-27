@@ -15,7 +15,8 @@
                                                 name="name"
                                                 tag="div"
                                                 rules="required|alpha"
-                                                v-slot="{ errors }">
+                                                v-slot="{ errors }"
+                            >
                                 <label class="form-field__label" for="name">Name</label>
                                 <input class="form-field__input"
                                        v-model="fields.name"
@@ -23,14 +24,17 @@
                                        name="name"
                                        :class="{'is-error': errors.length > 0}"
                                        type="text"
-                                       inputmode="text">
+                                       inputmode="text"
+                                >
                                 <div class="form-field__line"></div>
                                 <div class="form-field__error">{{ errors[0] }}</div>
                             </ValidationProvider>
                             <ValidationProvider class="form-field"
-                                                tag="div" name="phone"
+                                                tag="div"
+                                                name="phone"
                                                 rules="required|digits:11"
-                                                v-slot="{ errors }">
+                                                v-slot="{ errors }"
+                            >
                                 <label class="form-field__label" for="phone">Phone</label>
                                 <input class="form-field__input"
                                        v-model="fields.phone"
@@ -38,7 +42,8 @@
                                        name="phone"
                                        :class="{'is-error': errors.length > 0}"
                                        type="tel"
-                                       inputmode="tel">
+                                       inputmode="tel"
+                                >
                                 <div class="form-field__line"></div>
                                 <div class="form-field__error">{{ errors[0] }}</div>
                             </ValidationProvider>
@@ -46,7 +51,8 @@
                                                 tag="div"
                                                 name="email"
                                                 rules="required|email"
-                                                v-slot="{ errors }">
+                                                v-slot="{ errors }"
+                            >
                                 <label class="form-field__label" for="email">Email</label>
                                 <input class="form-field__input"
                                        v-model="fields.email"
@@ -54,7 +60,8 @@
                                        name="email"
                                        :class="{'is-error': errors.length > 0}"
                                        type="email"
-                                       inputmode="email">
+                                       inputmode="email"
+                                >
                                 <div class="form-field__line"></div>
                                 <div class="form-field__error">{{ errors[0] }}</div>
                             </ValidationProvider>
@@ -62,12 +69,14 @@
                                                 name="agree"
                                                 tag="div"
                                                 :rules="{ required: { allowFalse: false } }"
-                                                v-slot="{ errors }">
+                                                v-slot="{ errors }"
+                            >
                                 <label class="form-field__check">
                                     <input v-model="fields.agree"
                                            name="agree"
                                            type="checkbox"
-                                           :class="{'is-error': errors.length > 0}">
+                                           :class="{'is-error': errors.length > 0}"
+                                    >
                                     <span>I agree the processing of personal data</span>
                                 </label>
                                 <div class="form-field__error">{{ errors[0] }}</div>
@@ -115,14 +124,10 @@
 							title: result.status + ' ' + result.statusText,
 							type: 'success',
 							confirmButtonText: 'Ok'
-						}).then((res) => {
-							if (res) this.isSending = false;
 						});
 					}
 				})
 				.catch(() => {
-					this.isSending = false;
-
 					Swal.fire({
 						type: 'error',
 						title: 'Sorry server error',
@@ -131,7 +136,9 @@
 						showConfirmButton: false,
 						timer: 3000
 					});
-				})
+				}).then(() => {
+					this.isSending = false;
+				});
 			}
 		}
 	};
