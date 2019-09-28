@@ -1,5 +1,5 @@
 <template>
-    <div class="offices">
+    <div class="offices" v-if="locations.length">
         <div class="row">
             <div class="col col--6">
                 <div class="offices-content">
@@ -7,7 +7,7 @@
                     <div class="office-cities">
                         <div class="office-cities__name" v-for="location in locations" :key="location.id"
                              :class="{ 'is-active': currentLocationId === location.id }"
-                             @click="changeLocation(location.id)"
+                             @click="currentLocationId = location.id"
                         >
                             {{ location.city }}
                         </div>
@@ -28,7 +28,6 @@
 </template>
 
 <script>
-	import locations from '@/api/contacts';
 	import GMap from "./GMap";
 
 	export default {
@@ -37,17 +36,17 @@
 			GMap
 		},
 		data: () => ({
-			locations: locations,
-			currentLocationId: locations[0].id
+			locations: [],
+			currentLocationId: 0
 		}),
+		async created () {
+			await import('@/api/contacts').then((data) => {
+				this.locations = data.default;
+			});
+		},
 		computed: {
 			selectedLocation () {
 				return this.locations.filter(location => location.id === this.currentLocationId)[0];
-			}
-		},
-		methods: {
-			changeLocation (id) {
-				this.currentLocationId = id;
 			}
 		}
 	};

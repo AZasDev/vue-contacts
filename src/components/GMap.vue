@@ -12,7 +12,7 @@
 		props: {
 			location: {
 				type: Object,
-				require: true
+				default: null
 			}
 		},
 		data: () => ({

@@ -127,10 +127,10 @@
 						});
 					}
 				})
-				.catch(() => {
+				.catch((error) => {
 					Swal.fire({
 						type: 'error',
-						title: 'Sorry server error',
+						title: error.message,
 						toast: true,
 						position: 'top-end',
 						showConfirmButton: false,
