@@ -149,7 +149,7 @@
 						continue;
 					}
 					this.fields[field] = '';
-                }
+				}
 				requestAnimationFrame(() => {
 					this.$refs.observer.reset();
 				});
