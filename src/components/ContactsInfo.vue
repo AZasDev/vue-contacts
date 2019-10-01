@@ -73,9 +73,9 @@
         &--pl {
             @include media($screen-md) {
                 padding-left: em(30);
-                @include media($screen-def) {
-                    padding-left: em(70);
-                }
+            }
+            @include media($screen-def) {
+                padding-left: em(70);
             }
         }
 

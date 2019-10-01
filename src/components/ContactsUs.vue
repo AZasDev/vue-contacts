@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="col col--6">
-                    <ValidationObserver class="contacts-us-form" v-slot="{ passes }" tag="div">
+                    <ValidationObserver ref="observer" class="contacts-us-form" v-slot="{ passes }" tag="div">
                         <form class="form" @submit.prevent="passes(submitForm)">
                             <ValidationProvider class="form-field"
                                                 name="name"
@@ -124,6 +124,8 @@
 							title: result.status + ' ' + result.statusText,
 							type: 'success',
 							confirmButtonText: 'Ok'
+						}).then(() => {
+							this.clearForm();
 						});
 					}
 				})
@@ -138,6 +140,18 @@
 					});
 				}).then(() => {
 					this.isSending = false;
+				});
+			},
+			clearForm () {
+				for (let field in this.fields) {
+					if (field === 'agree') {
+						this.fields[field] = false;
+						continue;
+					}
+					this.fields[field] = '';
+                }
+				requestAnimationFrame(() => {
+					this.$refs.observer.reset();
 				});
 			}
 		}

@@ -17,7 +17,7 @@ export default [
 			lat: 40.6971494,
 			lng: -74.2598655
 		},
-		company: 'Global Message Services New York LLC',
+		company: 'Global Message Services USA LLC',
 		formatted_address: 'New York, Stepan Bandera, 33',
 		country: 'USA',
 		city: 'New York',
@@ -29,7 +29,7 @@ export default [
 			lat: 41.4017263,
 			lng: 2.1079071
 		},
-		company: 'Global Message Services Barcelona LLC',
+		company: 'Global Message Services Spain LLC',
 		formatted_address: 'Barcelona, Stepan Bandera, 33',
 		country: 'Spain',
 		city: 'Barcelona',
